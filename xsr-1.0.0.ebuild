@@ -12,10 +12,10 @@ SLOT="0"
 KEYWORDS="~ALLARCHES"
 IUSE="cursor"
 
-DEPEND="dev-lang/perl
+DEPEND=""
+RDEPEND="dev-lang/perl
 	media-gfx/scrot
 	cursor? ( media-gfx/imagemagick x11-misc/xdotool )"
-RDEPEND="${DEPEND}"
 
 src_install() {
 	dobin xsr
