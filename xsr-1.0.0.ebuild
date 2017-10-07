@@ -14,7 +14,7 @@ IUSE="cursor"
 
 DEPEND="dev-lang/perl
 	media-gfx/scrot
-	cursor? ( media-gfx/imagemagock x11-misc/xdotool )"
+	cursor? ( media-gfx/imagemagick x11-misc/xdotool )"
 RDEPEND="${DEPEND}"
 
 src_install() {
