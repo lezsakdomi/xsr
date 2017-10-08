@@ -9,7 +9,7 @@ SRC_URI="https://github.com/nonnymoose/${PN}/archive/v${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~ALLARCHES"
+KEYWORDS="~amd64" #Though this package is platform-independent
 IUSE="cursor"
 
 DEPEND=""
