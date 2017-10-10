@@ -1,2 +1,5 @@
 language: perl
-script: make
+jobs:
+        include:
+                - stage: build
+                  script: make all
