@@ -10,7 +10,7 @@ jobs:
                           - eval $(ssh-agent -s)
                           - mkdir -p secret
                           - curl $deploy_key_url | base64 -d >secret/deploy_key.enc
-                          - bash -c "aes-256-cbc -K \$encrypted_${deploy_key_encid}_key -iv \$encrypted_${deploy_key_encid}_iv -in secret/deploy_key.enc -out secret/deploy_key -d"
+                          - bash -c "openssl aes-256-cbc -K \$encrypted_${deploy_key_encid}_key -iv \$encrypted_${deploy_key_encid}_iv -in secret/deploy_key.enc -out secret/deploy_key -d"
                           - ssh-add secret/deploy_key
                   script:
                           - make maint
