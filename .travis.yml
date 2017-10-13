@@ -8,7 +8,10 @@ jobs:
                           - git config user.name TravisCI
                           - git config user.email https://travis-ci.org/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID
                           - eval $(ssh-agent -s)
-                          - ssh-add <(echo \"$deploy_key\")
+                          - mkdir -p secret
+                          - wget $deploy_key_url -q -O secret/deploy_key.enc
+                          - eval aes-256-cbc -K \$encrypted_${deploy_key_encid}_key -iv \$encrypted_${deploy_key_encid}_iv -in secret/deploy_key.enc -out secret/deploy_key -d
+                          - ssh-add secret/deploy_key
                   script:
                           - make maint
                           - git commit -a -m "Generate maintainer files"
