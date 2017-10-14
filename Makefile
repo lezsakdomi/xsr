@@ -2,6 +2,7 @@
 all: README.md xsr
 
 .PHONY: maint
+.PHONY: README.md # git doesn't care file modification dates
 maint: README.md
 
 README.md: xsr README.md.m4 markdown-preset.m4
