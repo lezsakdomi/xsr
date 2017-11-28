@@ -29,6 +29,8 @@ my %mimetypes = (
 );
 my @mousegrabs = ();
 
+SYNTAX_ERROR;
+
 sub usage {
 	return <<endusage;
 Usage: $0 [options] [outfile]
